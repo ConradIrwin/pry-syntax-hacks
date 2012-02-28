@@ -20,6 +20,12 @@ Accessing method objects:
 
     pry (main)> ["foo@bar.com"].map &User.:find_by_email
 
+Accessing outer Pry bindings:
+
+    pry (main)> cd (a = Object.new)
+    pry (main)> puts ../a
+    #<Object:0x195aca8>
+
 # Issues
 
 This will break regular expressions most often:

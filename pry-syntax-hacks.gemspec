@@ -1,9 +1,10 @@
 Gem::Specification.new do |s|
   s.name = "pry-syntax-hacks"
-  s.version = "0.0.4"
+  s.version = "0.0.5"
   s.platform = Gem::Platform::RUBY
   s.author = "Conrad Irwin"
   s.email = "conrad.irwin@gmail.com"
+  s.license = 'MIT'
   s.homepage = "http://github.com/ConradIrwin/pry-syntax-hacks"
   s.summary = "Allows various short-cuts that make exploring Ruby objects nicer"
   s.description = "Allows you to do object.@instance_var, or object.!private_method(:args), or foo.map &object.:method_name"
