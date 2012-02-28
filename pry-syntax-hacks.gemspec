@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "pry-syntax-hacks"
-  s.version = "0.0.5"
+  s.version = "0.0.6"
   s.platform = Gem::Platform::RUBY
   s.author = "Conrad Irwin"
   s.email = "conrad.irwin@gmail.com"
