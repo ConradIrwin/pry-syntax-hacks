@@ -1,11 +1,11 @@
 class Pry
   alias_method :old_retrieve_line, :retrieve_line
 
-  def retrieve_line(*args)
-    val = old_retrieve_line(*args)
+  def retrieve_line(eval_string, *args)
+    old_retrieve_line(eval_string, *args)
 
-    val.gsub(/\.(@[a-z0-9_]+)/, '.instance_variable_get("\1")').
-        gsub(/\.:([a-z0-9_]+[?!]?)/, '.method(:\1)').
-        gsub(/\.!([a-z0-9_]+[?!]?)([ \(])(?=(.*))/) { ".send#{$2}:#{$1}#{$3 == ""?"":","}" }
+    eval_string.gsub!(/\.(@[a-z0-9_]+)/, '.instance_variable_get("\1")')
+    eval_string.gsub!(/\.:([a-z0-9_]+[?!]?)/, '.method(:\1)')
+    eval_string.gsub!(/\.!([a-z0-9_]+[?!]?)([ \(])(?=(.*))/) { ".send#{$2}:#{$1}#{$3 == ""?"":","}" }
   end
 end
